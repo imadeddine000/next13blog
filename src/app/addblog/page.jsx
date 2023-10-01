@@ -7,7 +7,11 @@ const Add = () => {
     content:'',
   })
   const handleSubmit=async ()=>{
-    fetch(`${process.env.URL}/api/addblog`,{
+    if(blog.title== "" || blog.content==""){
+      window.alert('please add a title or content before publishing the blog ')
+    }
+    else{
+      fetch(`${process.env.URL||'http://localhost:3000'}/api/addblog`,{
      method:'POST',
      body:JSON.stringify(blog)
     }).then(()=>{
@@ -16,6 +20,7 @@ const Add = () => {
     
       setblog({title:'',content:''})
     
+    }
     
   }
   return (

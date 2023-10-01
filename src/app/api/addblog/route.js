@@ -1,6 +1,6 @@
 import { NextResponse,NextRequest } from 'next/server'
-import createConncetion from '../../../../server/mongodb'
-import Blog from '../../../../server/models/blogschema'
+import createConncetion from '../../../server/mongodb'
+import Blog from '../../../server/models/blogschema'
 
 export async  function POST(req){
   

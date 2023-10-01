@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import Blog from '../../../../server/models/blogschema'
+import Blog from '../../../server/models/blogschema'
 
 export async function POST(req){
     

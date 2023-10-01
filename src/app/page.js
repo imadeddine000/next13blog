@@ -1,5 +1,5 @@
 import Link from "next/link"
-import createConncetion from "../../server/mongodb"
+import createConncetion from "../server/mongodb"
 
 
 export default async function Home() {
@@ -27,7 +27,7 @@ export default async function Home() {
 
 const getBlogs=async()=>{
   
-  const res=await fetch('http://localhost:3000/api/getblogs',{next:{revalidate:1}})
+  const res=await fetch(`${process.env.URL}/api/getblogs`,{next:{revalidate:1}})
   const data=await res.json()
  
   return data.data
