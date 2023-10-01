@@ -14,7 +14,7 @@ export default async function Blog({params}) {
 
 const getBlog=async(id)=>{
 
-  const res=await fetch('http://localhost:3000/api/getbyid',{
+  const res=await fetch(`${process.env.URL}/api/getbyid`,{
     method:'POST',
     body:JSON.stringify({
       id:id

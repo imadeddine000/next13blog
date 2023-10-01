@@ -7,7 +7,7 @@ const Add = () => {
     content:'',
   })
   const handleSubmit=async ()=>{
-    fetch('http://localhost:3000/api/addblog',{
+    fetch(`${process.env.URL}/api/addblog`,{
      method:'POST',
      body:JSON.stringify(blog)
     }).then(()=>{
