@@ -27,7 +27,7 @@ export default async function Home() {
 
 const getBlogs=async()=>{
   
-  const res=await fetch(`${process.env.URL}/api/getblogs`,{next:{revalidate:1}})
+  const res=await fetch(`${process.env.URL||'http://localhost:3000'}/api/getblogs`,{next:{revalidate:1}})
   const data=await res.json()
  
   return data.data
